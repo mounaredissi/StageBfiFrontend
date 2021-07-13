@@ -1,0 +1,51 @@
+[ {
+  "identifier" : "PASSEPORT",
+  "name" : "PASSEPORT",
+  "description" : null,
+  "toScan" : false,
+  "copyNumber" : null,
+  "template" : { },
+  "idDocument" : true,
+  "pk" : 1,
+  "code" : "PASSEPORT"
+}, {
+  "identifier" : "CARTE NATIONALE D'IDENTITE",
+  "name" : "CARTE NATIONALE D'IDENTITE",
+  "description" : null,
+  "toScan" : false,
+  "copyNumber" : null,
+  "template" : { },
+  "idDocument" : true,
+  "pk" : 2,
+  "code" : "CARTE NATIONALE D'IDENTITE"
+}, {
+  "identifier" : "CARTE DE SEJOUR",
+  "name" : "CARTE DE SEJOUR",
+  "description" : null,
+  "toScan" : false,
+  "copyNumber" : null,
+  "template" : { },
+  "idDocument" : true,
+  "pk" : 3,
+  "code" : "CARTE DE SEJOUR"
+}, {
+  "identifier" : "CARTE ELECTEUR",
+  "name" : "Carte électeur",
+  "description" : null,
+  "toScan" : false,
+  "copyNumber" : null,
+  "template" : { },
+  "idDocument" : true,
+  "pk" : 21,
+  "code" : "CARTE ELECTEUR"
+}, {
+  "identifier" : "PERMIS DE CONDUIRE",
+  "name" : "Permis de conduire",
+  "description" : null,
+  "toScan" : false,
+  "copyNumber" : null,
+  "template" : { },
+  "idDocument" : true,
+  "pk" : 22,
+  "code" : "PERMIS DE CONDUIRE"
+} ]

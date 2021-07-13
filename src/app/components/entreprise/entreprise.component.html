@@ -1,0 +1,114 @@
+<div class="testbox">
+  <mat-horizontal-stepper #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup" class="example-form">
+        <div class="columns">
+          <ng-template matStepLabel>Administrateur utilisateur</ng-template>
+          <div class="item">
+            <mat-form-field class="example-full-width">
+              <mat-label for="lname">nom</mat-label><br>
+              <input id="lname" matInput placeholder="taper voitre nom" formControlName="firstCtrl" required>
+            </mat-form-field>
+          </div>
+          <br>
+         <div class="item">
+            <mat-form-field class="example-full-width">
+              <mat-label>prénom</mat-label><br>
+              <input matInput placeholder="taper voitre prénom" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <span></span>
+          </div>
+          <span></span>
+          <div class="item">
+            <mat-form-field class="example-full-width">
+              <mat-label for="adresse">adresse e-mail</mat-label><br>
+              <input id="adresse" matInput placeholder="votre adresse e-mail" formControlName="firstCtrl" required>
+            </mat-form-field>
+          </div>
+          <div class="item">
+            <mat-form-field class="example-full-width">
+              <mat-label>N° téléphone</mat-label><br>
+              <input matInput placeholder="taper voitre N° de téléphone" formControlName="firstCtrl" required>
+            </mat-form-field>
+            </div>
+          </div>
+          <div class="item">
+            <mat-form-field class="example-full-width">
+              <mat-label>adresse</mat-label><br>
+              <input matInput placeholder="taper voitre adresse" formControlName="firstCtrl" required>
+            </mat-form-field>
+            </div>
+          <div>
+            <button mat-button matStepperNext>étape suivante</button>
+          </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup" class="example-form">
+        <div class="columns">
+          <ng-template matStepLabel>Administrateur profile</ng-template>
+          <div class="item">
+            <mat-form-field class="example-full-width">
+              <mat-label for="lname">nom</mat-label><br>
+              <input id="lname" matInput placeholder="taper voitre nom" formControlName="firstCtrl" required>
+            </mat-form-field>
+          </div>
+          <br>
+         <div class="item">
+            <mat-form-field class="example-full-width">
+              <mat-label>prénom</mat-label><br>
+              <input matInput placeholder="taper voitre prénom" formControlName="firstCtrl" required>
+            </mat-form-field>
+            <span></span>
+          </div>
+          <span></span>
+          <div class="item">
+            <mat-form-field class="example-full-width">
+              <mat-label for="adresse">adresse e-mail</mat-label><br>
+              <input id="adresse" matInput placeholder="votre adresse e-mail" formControlName="firstCtrl" required>
+            </mat-form-field>
+          </div>
+          <div class="item">
+            <mat-form-field class="example-full-width">
+              <mat-label>N° téléphone</mat-label><br>
+              <input matInput placeholder="taper voitre N° de téléphone" formControlName="firstCtrl" required>
+            </mat-form-field>
+            </div>
+          </div>
+          <div class="item">
+            <mat-form-field class="example-full-width">
+              <mat-label>adresse</mat-label><br>
+              <input matInput placeholder="taper voitre adresse" formControlName="firstCtrl" required>
+            </mat-form-field>
+            </div>
+          <div>
+            <button mat-button matStepperNext>étape suivante</button>
+          </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <div class="columns">
+        <ng-template matStepLabel>Services</ng-template>
+        <mat-form-field class="example-full-width">
+          <mat-label>service</mat-label><br>
+          <br>
+          <input matInput formControlName="secondCtrl" placeholder="Ex. La mannouba, Tunis" required>
+        </mat-form-field>
+      </div>
+        <div>
+          <button mat-button matStepperPrevious>étape précedente</button>
+          <button mat-button matStepperNext>étape suivante</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Documents attachés</ng-template>
+      <input type="file" name="file" multiple>
+      <div>
+        <button mat-button matStepperPrevious>étape précedente</button>
+        <button mat-button (click)="stepper.reset()">page d'acceuil</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

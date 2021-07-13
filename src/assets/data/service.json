@@ -1,0 +1,839 @@
+[
+    {
+        "identifier": "Virement",
+        "description": "Virement",
+        "active": true,
+        "price": 0,
+        "clientNature": null,
+        "pk": 143,
+        "code": "Virement",
+        "roles": [
+            {
+                "identifier": "Consultation virements",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 143,
+                "code": "Consultation virements",
+                "menu": "Consultation virements"
+            },
+            {
+                "identifier": "Consultation bénéficiaires",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 164,
+                "code": "Consultation bénéficiaires",
+                "menu": "Consultation bénéficiaires"
+            },
+            {
+                "identifier": "Saisie bénéficiaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 145,
+                "code": "Saisie bénéficiaire",
+                "menu": "Saisie bénéficiaire"
+            },
+            {
+                "identifier": "Validation virement",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 223,
+                "code": "Validation virement",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Validation bénéficiaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 236,
+                "code": "Validation bénéficiaire",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Saisie virement",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 148,
+                "code": "Saisie virement",
+                "menu": "Saisie virement"
+            },
+            {
+                "identifier": "Administrateur utilisateurs",
+                "description": null,
+                "active": true,
+                "assignable": false,
+                "pk": 101,
+                "code": "Administrateur utilisateurs",
+                "menu": "Administrateur utilisateurs"
+            },
+            {
+                "identifier": "Administrateur profiles",
+                "description": null,
+                "active": true,
+                "assignable": false,
+                "pk": 102,
+                "code": "Administrateur profiles",
+                "menu": "Administrateur profiles"
+            },
+            {
+                "identifier": "Validation virement niveau 2",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 261,
+                "code": "Validation virement niveau 2",
+                "menu": "Validation opération digitale"
+            }
+        ],
+        "currency": "CDF"
+    },
+    {
+        "identifier": "E-Paiement",
+        "description": "E-Paiement",
+        "active": true,
+        "price": 1000,
+        "clientNature": "Corporate",
+        "pk": 182,
+        "code": "E-Paiement",
+        "roles": [
+            {
+                "identifier": "Consultation e-paiements",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 181,
+                "code": "Consultation e-paiements",
+                "menu": "Consultation e-paiements"
+            },
+            {
+                "identifier": "Validation e-paiement",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 182,
+                "code": "Validation e-paiement",
+                "menu": "Validation e-paiement"
+            }
+        ],
+        "currency": "CDF"
+    },
+    {
+        "identifier": "Virement multiple",
+        "description": "Virement multiple",
+        "active": true,
+        "price": 1000,
+        "clientNature": "Corporate",
+        "pk": 144,
+        "code": "Virement multiple",
+        "roles": [
+            {
+                "identifier": "Saisie virement multiple",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 151,
+                "code": "Saisie virement multiple",
+                "menu": "Saisie virement multiple"
+            },
+            {
+                "identifier": "Consultation bénéficiaires",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 164,
+                "code": "Consultation bénéficiaires",
+                "menu": "Consultation bénéficiaires"
+            },
+            {
+                "identifier": "Consultation virements multiples",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 166,
+                "code": "Consultation virements multiples",
+                "menu": "Consultation virements multiples"
+            },
+            {
+                "identifier": "Saisie bénéficiaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 145,
+                "code": "Saisie bénéficiaire",
+                "menu": "Saisie bénéficiaire"
+            },
+            {
+                "identifier": "Validation virement multiple",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 222,
+                "code": "Validation virement multiple",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Validation bénéficiaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 236,
+                "code": "Validation bénéficiaire",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Administrateur utilisateurs",
+                "description": null,
+                "active": true,
+                "assignable": false,
+                "pk": 101,
+                "code": "Administrateur utilisateurs",
+                "menu": "Administrateur utilisateurs"
+            },
+            {
+                "identifier": "Administrateur profiles",
+                "description": null,
+                "active": true,
+                "assignable": false,
+                "pk": 102,
+                "code": "Administrateur profiles",
+                "menu": "Administrateur profiles"
+            }
+        ],
+        "currency": "CDF"
+    },
+    {
+        "identifier": "Consultation comptes",
+        "description": "Consultation comptes",
+        "active": true,
+        "price": 0,
+        "clientNature": null,
+        "pk": 28,
+        "code": "Consultation comptes",
+        "roles": [
+            {
+                "identifier": "Consultation comptes",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 121,
+                "code": "Consultation comptes",
+                "menu": "Consultation comptes"
+            },
+            {
+                "identifier": "Administrateur utilisateurs",
+                "description": null,
+                "active": true,
+                "assignable": false,
+                "pk": 101,
+                "code": "Administrateur utilisateurs",
+                "menu": "Administrateur utilisateurs"
+            },
+            {
+                "identifier": "Administrateur profiles",
+                "description": null,
+                "active": true,
+                "assignable": false,
+                "pk": 102,
+                "code": "Administrateur profiles",
+                "menu": "Administrateur profiles"
+            }
+        ],
+        "currency": "CDF"
+    },
+    {
+        "identifier": "Virement salaire",
+        "description": "Virement salaire",
+        "active": true,
+        "price": 1000,
+        "clientNature": "Corporate",
+        "pk": 161,
+        "code": "Virement salaire",
+        "roles": [
+            {
+                "identifier": "Consultation virements salaires",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 167,
+                "code": "Consultation virements salaires",
+                "menu": "Consultation virements salaires"
+            },
+            {
+                "identifier": "Validation virement salaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 221,
+                "code": "Validation virement salaire",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Gestion salariés",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 161,
+                "code": "Gestion salariés",
+                "menu": "Gestion salariés"
+            },
+            {
+                "identifier": "Saisie virement salaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 162,
+                "code": "Saisie virement salaire",
+                "menu": "Saisie virement salaire"
+            },
+            {
+                "identifier": "Administrateur utilisateurs",
+                "description": null,
+                "active": true,
+                "assignable": false,
+                "pk": 101,
+                "code": "Administrateur utilisateurs",
+                "menu": "Administrateur utilisateurs"
+            },
+            {
+                "identifier": "Administrateur profiles",
+                "description": null,
+                "active": true,
+                "assignable": false,
+                "pk": 102,
+                "code": "Administrateur profiles",
+                "menu": "Administrateur profiles"
+            }
+        ],
+        "currency": "CDF"
+    },
+    {
+        "identifier": "Moyens de paiement",
+        "description": "Moyens de paiement",
+        "active": true,
+        "price": 0,
+        "clientNature": null,
+        "pk": 165,
+        "code": "Moyens de paiement",
+        "roles": [
+            {
+                "identifier": "Validation demande carte",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 234,
+                "code": "Validation demande carte",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Validation mise à disposition",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 229,
+                "code": "Validation mise à disposition",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Validation demande chéquier",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 232,
+                "code": "Validation demande chéquier",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Validation demande chèque de banque",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 233,
+                "code": "Validation demande chèque de banque",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Saisie demande carte",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 169,
+                "code": "Saisie demande carte",
+                "menu": "Saisie demande carte"
+            },
+            {
+                "identifier": "Saisie demande chéquier",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 170,
+                "code": "Saisie demande chéquier",
+                "menu": "Saisie demande chéquier"
+            },
+            {
+                "identifier": "Consultation demandes chéquier",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 171,
+                "code": "Consultation demandes chéquier",
+                "menu": "Consultation demandes chéquier"
+            },
+            {
+                "identifier": "Consultation demandes carte",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 172,
+                "code": "Consultation demandes carte",
+                "menu": "Consultation demandes carte"
+            },
+            {
+                "identifier": "Saisie demande chèque de banque",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 201,
+                "code": "Saisie demande chèque de banque",
+                "menu": "Saisie demande chèque de banque"
+            },
+            {
+                "identifier": "Consultation demandes chèque de banque",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 202,
+                "code": "Consultation demandes chèque de banque",
+                "menu": "Consultation demandes chèque de banque"
+            },
+            {
+                "identifier": "Saisie mise à disposition",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 203,
+                "code": "Saisie mise à disposition",
+                "menu": "Saisie mise à disposition"
+            },
+            {
+                "identifier": "Consultation mises à disposition",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 204,
+                "code": "Consultation mises à disposition",
+                "menu": "Consultation mises à disposition"
+            }
+        ],
+        "currency": "CDF"
+    },
+    {
+        "identifier": "Forex",
+        "description": "Forex",
+        "active": true,
+        "price": 1000,
+        "clientNature": "Corporate",
+        "pk": 221,
+        "code": "Forex",
+        "roles": [
+            {
+                "identifier": "Saisie ordre Forex",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 241,
+                "code": "Saisie ordre Forex",
+                "menu": "Saisie ordre Forex"
+            },
+            {
+                "identifier": "Consultation ordres Forex",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 242,
+                "code": "Consultation ordres Forex",
+                "menu": "Consultation ordres Forex"
+            }
+        ],
+        "currency": "CDF"
+    },
+    {
+        "identifier": "Placement",
+        "description": "Placement",
+        "active": true,
+        "price": 1000,
+        "clientNature": null,
+        "pk": 142,
+        "code": "Placement",
+        "roles": [
+            {
+                "identifier": "Validation tombée anticipative",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 225,
+                "code": "Validation tombée anticipative",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Validation mise en place dépôt à terme",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 228,
+                "code": "Validation mise en place dépôt à terme",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Consultation placements",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 142,
+                "code": "Consultation placements",
+                "menu": "Consultation placements"
+            },
+            {
+                "identifier": "Consultation mises en place dépôt à terme",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 207,
+                "code": "Consultation mises en place dépôt à terme",
+                "menu": "Consultation mises en place dépôt à terme"
+            },
+            {
+                "identifier": "Saisie mise en place dépôt à terme",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 208,
+                "code": "Saisie mise en place dépôt à terme",
+                "menu": "Saisie mise en place dépôt à terme"
+            },
+            {
+                "identifier": "Saisie tombée anticipative",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 209,
+                "code": "Saisie tombée anticipative",
+                "menu": "Saisie tombée anticipative"
+            },
+            {
+                "identifier": "Consultation tombées anticipatives",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 210,
+                "code": "Consultation tombées anticipatives",
+                "menu": "Consultation tombées anticipatives"
+            },
+            {
+                "identifier": "Administrateur utilisateurs",
+                "description": null,
+                "active": true,
+                "assignable": false,
+                "pk": 101,
+                "code": "Administrateur utilisateurs",
+                "menu": "Administrateur utilisateurs"
+            },
+            {
+                "identifier": "Administrateur profiles",
+                "description": null,
+                "active": true,
+                "assignable": false,
+                "pk": 102,
+                "code": "Administrateur profiles",
+                "menu": "Administrateur profiles"
+            }
+        ],
+        "currency": "CDF"
+    },
+    {
+        "identifier": "Transfert",
+        "description": "Transfert",
+        "active": true,
+        "price": 1000,
+        "clientNature": null,
+        "pk": 162,
+        "code": "Transfert",
+        "roles": [
+            {
+                "identifier": "Consultation bénéficiaires",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 164,
+                "code": "Consultation bénéficiaires",
+                "menu": "Consultation bénéficiaires"
+            },
+            {
+                "identifier": "Consultation transferts",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 165,
+                "code": "Consultation transferts",
+                "menu": "Consultation transferts"
+            },
+            {
+                "identifier": "Saisie bénéficiaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 145,
+                "code": "Saisie bénéficiaire",
+                "menu": "Saisie bénéficiaire"
+            },
+            {
+                "identifier": "Validation transfert",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 224,
+                "code": "Validation transfert",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Validation bénéficiaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 236,
+                "code": "Validation bénéficiaire",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Saisie transfert",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 168,
+                "code": "Saisie transfert",
+                "menu": "Saisie transfert"
+            },
+            {
+                "identifier": "Administrateur utilisateurs",
+                "description": null,
+                "active": true,
+                "assignable": false,
+                "pk": 101,
+                "code": "Administrateur utilisateurs",
+                "menu": "Administrateur utilisateurs"
+            },
+            {
+                "identifier": "Administrateur profiles",
+                "description": null,
+                "active": true,
+                "assignable": false,
+                "pk": 102,
+                "code": "Administrateur profiles",
+                "menu": "Administrateur profiles"
+            }
+        ],
+        "currency": "CDF"
+    },
+    {
+        "identifier": "Trade",
+        "description": "Trade",
+        "active": true,
+        "price": 1000,
+        "clientNature": "Corporate",
+        "pk": 202,
+        "code": "Trade",
+        "roles": [
+            {
+                "identifier": "Validation crédit documentaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 235,
+                "code": "Validation crédit documentaire",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Validation garantie bancaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 230,
+                "code": "Validation garantie bancaire",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Validation remise documentaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 227,
+                "code": "Validation remise documentaire",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Validation annulation crédit documentaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 237,
+                "code": "Validation annulation crédit documentaire",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Saisie crédit documentaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 211,
+                "code": "Saisie crédit documentaire",
+                "menu": "Saisie crédit documentaire"
+            },
+            {
+                "identifier": "Consultation crédits documentaires",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 212,
+                "code": "Consultation crédits documentaires",
+                "menu": "Consultation crédits documentaires"
+            },
+            {
+                "identifier": "Saisie remise documentaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 213,
+                "code": "Saisie remise documentaire",
+                "menu": "Saisie remise documentaire"
+            },
+            {
+                "identifier": "Consultation remises documentaires",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 214,
+                "code": "Consultation remises documentaires",
+                "menu": "Consultation remises documentaires"
+            },
+            {
+                "identifier": "Saisie garantie bancaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 215,
+                "code": "Saisie garantie bancaire",
+                "menu": "Saisie garantie bancaire"
+            },
+            {
+                "identifier": "Consultation garanties bancaires",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 216,
+                "code": "Consultation garanties bancaires",
+                "menu": "Consultation garanties bancaires"
+            },
+            {
+                "identifier": "Saisie annulation crédit documentaire",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 217,
+                "code": "Saisie annulation crédit documentaire",
+                "menu": "Saisie annulation crédit documentaire"
+            }
+        ],
+        "currency": "CDF"
+    },
+    {
+        "identifier": "Crédit",
+        "description": "Crédit",
+        "active": true,
+        "price": 1000,
+        "clientNature": null,
+        "pk": 164,
+        "code": "Crédit",
+        "roles": [
+            {
+                "identifier": "Validation demande financement",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 231,
+                "code": "Validation demande financement",
+                "menu": "Validation opération digitale"
+            },
+            {
+                "identifier": "Saisie demande financement",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 173,
+                "code": "Saisie demande financement",
+                "menu": "Saisie demande financement"
+            },
+            {
+                "identifier": "Consultation demande financement",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 174,
+                "code": "Consultation demande financement",
+                "menu": "Consultation demande financement"
+            },
+            {
+                "identifier": "Administrateur utilisateurs",
+                "description": null,
+                "active": true,
+                "assignable": false,
+                "pk": 101,
+                "code": "Administrateur utilisateurs",
+                "menu": "Administrateur utilisateurs"
+            },
+            {
+                "identifier": "Administrateur profiles",
+                "description": null,
+                "active": true,
+                "assignable": false,
+                "pk": 102,
+                "code": "Administrateur profiles",
+                "menu": "Administrateur profiles"
+            },
+            {
+                "identifier": "Consultation crédits",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 141,
+                "code": "Consultation crédits",
+                "menu": "Consultation crédits"
+            }
+        ],
+        "currency": "CDF"
+    },
+    {
+        "identifier": "E-Documents",
+        "description": "E-Documents",
+        "active": true,
+        "price": 1000,
+        "clientNature": null,
+        "pk": 201,
+        "code": "E-Documents",
+        "roles": [
+            {
+                "identifier": "Consultation e-documents",
+                "description": null,
+                "active": true,
+                "assignable": true,
+                "pk": 205,
+                "code": "Consultation e-documents",
+                "menu": "Consultation e-documents"
+            }
+        ],
+        "currency": "CDF"
+    }
+]
