@@ -13,14 +13,15 @@ p {
 
 #heading {
   text-transform: uppercase;
-  color: #673AB7;
+  color: #035096;
   font-weight: normal
 }
 
 #msform {
   text-align: center;
   position: relative;
-  margin-top: 20px
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 #msform fieldset {
@@ -45,7 +46,6 @@ p {
 #msform input,
 #msform textarea {
   padding: 8px 15px 8px 15px;
-  border: 1px solid #ccc;
   border-radius: 0px;
   margin-bottom: 25px;
   margin-top: 2px;
@@ -53,7 +53,6 @@ p {
   box-sizing: border-box;
   font-family: montserrat;
   color: #2C3E50;
-  background-color: #ECEFF1;
   font-size: 16px;
   letter-spacing: 1px
 }
@@ -63,13 +62,12 @@ p {
   -moz-box-shadow: none !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
-  border: 1px solid #673AB7;
   outline-width: 0
 }
 
 #msform .action-button {
   width: 100px;
-  background: #673AB7;
+  background: #3043af;
   font-weight: bold;
   color: white;
   border: 0 none;
@@ -131,16 +129,12 @@ p {
   text-align: right
 }
 
-.fieldlabels {
-  color: gray;
-  text-align: left
-}
-
 #progressbar {
   margin-bottom: 30px;
   overflow: hidden;
   color: lightgrey;
   width: 830px;
+  margin-left : 40px;
 }
 
 #progressbar .active {
@@ -150,15 +144,16 @@ p {
 #progressbar li {
   list-style-type: none;
   font-size: 15px;
-  width: 25%;
+  width: 33%;
   float: left;
   position: relative;
   font-weight: 400
 }
 
 #progressbar #account:before {
-  font-family: FontAwesome;
-  content: "\f13e"
+  font-family: "Font Awesome 5 Free";
+  content: "\f095";
+  font-weight: 400;
 }
 
 #progressbar #personal:before {
@@ -213,10 +208,7 @@ p {
   background-color: #035096
 }
 
-.fit-image {
-  width: 100%;
-  object-fit: cover
-}
+
 .item:hover p,
 .item:hover i,
 .question:hover p,
@@ -225,17 +217,13 @@ input:hover::placeholder {
     color: #035096;
 }
 
-.item input:hover,
-.item select:hover,
-.item textarea:hover {
-    border: 1px solid transparent;
-    box-shadow: 0 0 3px 0 #035096;
-    color: #035096;
-}
-
 .item {
-    position: relative;
-    margin: 1px 0;
+  margin-right: 20px !important;
+  margin-left: 20px !important;
+  width: 400px;
+  float: left;
+  position: relative;
+  margin: 1px 0;
 }
 
 .item span {
@@ -243,4 +231,98 @@ input:hover::placeholder {
 }
 .example-full-width {
   width: 80%;
+}
+
+.tryit {
+ /* background-color: #311B92; */
+  padding: 20px;
+
+  float: left !important;
+  margin: 10px;
+  border: 1px solid;
+  border-left: 4px solid blue;
+  width: 280px;
+}
+
+.price {
+  position: relative;
+  bottom: -40px;
+  margin: 10px;
+  padding: 10px 30px 10px 30px;
+  border: 1px solid;
+  border-left: 4px solid green;
+}
+
+.price-number {
+  color: green;
+}
+.body-form {
+  width: 900px;
+  margin: 0 !important;
+}
+
+.body-form2 {
+
+  padding-top: 0px !important;
+
+}
+
+.button_div {
+  position: relative;
+  top: 40px;
+}
+/deep/ .mat-slide-toggle-bar {
+  background-color: rgb(163, 191, 233) !important;
+}
+
+/deep/ .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: rgb(22, 23, 126) !important;
+}
+
+
+form .email {
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+
+.email input {
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.email label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: white;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.email span::before {    position: absolute;
+  top: 40px;
+  left: 0px;
+  width: 0%;
+  height: 2px;
+  background: #3a3cc5;
+  transition: .5s;
+}
+
+.email input:focus~label,
+.email input:valid~label {
+  top: -5px;
+  color: #3a3cc5;
+}
+
+.email input:focus~span::befor,
+.email input:valid~span::before {
+  width: 100%;
 }

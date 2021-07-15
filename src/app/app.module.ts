@@ -17,7 +17,6 @@ import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSliderModule} from '@angular/material/slider';
-import { ClientComponent } from './components/client/client.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -28,7 +27,6 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     EntrepriseComponent,
     ChoixComponent,
     AcceuilComponent,
-    ClientComponent,
     SignUpComponent,
 
     ],

@@ -1,4 +1,4 @@
-z<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,6 +7,7 @@ z<!DOCTYPE html>
     <title>Document</title>
   </head>
   <body>
+    <div *ngIf="!this.var" >
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div
@@ -16,18 +17,20 @@ z<!DOCTYPE html>
             p-0
             mt-3
             mb-2
+            body-form
           "
         >
-          <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-            <h2 id="heading">veulliez vous inscrire </h2>
-            <p>remplir le formulaire ci-dessous</p>
-            <form id="msform">
+          <div class="card px-0 pt-4 pb-0 mt-3 mb-3 body-form2">
+            <h2 id="heading">veulliez vous inscrire  </h2>
+            <p> remplir le formulaire ci-dessous</p>
+            <form  [formGroup]="form1" id="msform">
               <ul id="progressbar">
                 <li
                   [ngClass]="{ active: this.page === 0 }"
                   class="active"
                   id="account"
                 >
+
                   <strong>1. Informations sur le profile</strong>
                 </li>
                 <li [ngClass]="{ active: this.page === 1 }" id="personal">
@@ -65,58 +68,29 @@ z<!DOCTYPE html>
                   <div class="columns">
                     <div class="item">
                       <mat-form-field class="example-full-width">
-                        <mat-label for="lname">nom</mat-label><br />
-                        <input
-                          ngModel
-                          id="lname"
-                          matInput
-                          placeholder="taper voitre nom"
-                          formControlName="name"
-                          required
-                        />
-                      </mat-form-field>
+                        <mat-label for="lname">prénom</mat-label><br>
+                        <input ngModel id="lname" matInput placeholder="taper voitre prénom" formControlName="lastname" required>
+                    </mat-form-field>
+                    </div>
+                    <div class="item">
+                      <mat-form-field class="example-full-width " >
+                        <mat-label for="lname"  >nom</mat-label><br>
+                        <input ngModel id="lname" matInput placeholder="taper voitre nom" formControlName="name" required>
+                    </mat-form-field>
                     </div>
                     <div class="item">
                       <mat-form-field class="example-full-width">
-                        <mat-label for="lname">prénom</mat-label><br />
-                        <input
-                          ngModel
-                          id="lname"
-                          matInput
-                          placeholder="taper voitre prénom"
-                          formControlName="lastname"
-                          required
-                        />
-                      </mat-form-field>
+                        <mat-label for="lname">adresse e-mail</mat-label><br>
+                        <input ngModel id="lname" matInput placeholder="taper voitre adresse e-mail" formControlName="adresseemail" required>
+                    </mat-form-field>
                     </div>
                     <div class="item">
                       <mat-form-field class="example-full-width">
-                        <mat-label for="lname">numéro de téléphone</mat-label
-                        ><br />
-                        <input
-                          ngModel
-                          id="lname"
-                          matInput
-                          placeholder="taper voitre numéro de téléphone"
-                          formControlName="numtel"
-                          required
-                        />
-                      </mat-form-field>
+                        <mat-label for="lname">numéro de téléphone</mat-label><br>
+                        <input ngModel id="lname" matInput placeholder="taper voitre numéro de téléphone" formControlName="numtel" required>
+                    </mat-form-field>
                     </div>
-                    <div class="item">
-                      <mat-form-field class="example-full-width">
-                        <mat-label for="lname">adresse e-mail</mat-label><br />
-                        <input
-                          ngModel
-                          id="lname"
-                          matInput
-                          placeholder="taper voitre adresse e-mail"
-                          formControlName="adresseemail"
-                          required
-                        />
-                      </mat-form-field>
-                    </div>
-                    <div class="item">
+                    <div class="item" style="margin-top:40px ;">
                       <mat-form-field
                         appearance="fill"
                         class="example-full-width"
@@ -135,7 +109,16 @@ z<!DOCTYPE html>
                           </mat-option>
                         </mat-select>
                       </mat-form-field>
+
                     </div>
+                    <div class="item">
+                    <mat-form-field appearance="fill"  class="example-full-width">
+                      <mat-label><Label>La date d'expiration de votre carte</Label></mat-label>
+                      <input matInput [matDatepicker]="picker" formControlName="dateexp" required>
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+</div>
                   </div>
                 </div>
 
@@ -143,17 +126,22 @@ z<!DOCTYPE html>
                 <div [ngClass]="{ 'tab': true, 'active': this.page===1 } " [hidden]="this.page !==1 " >
                   <h3>Step Two</h3>
                   <div *ngIf="this.services !== null" style="background-color: gray !important;">
+
                     <div *ngFor="let service of this.services">
+                      <div class="tryit">
                       <mat-slide-toggle (change)="addService(service)">
+
                         {{ service.identifier }}
                         {{ service.price }}
-                      </mat-slide-toggle>
 
+                      </mat-slide-toggle>
                     </div>
+                    </div>
+
                   </div>
-                  <div>
-                    Price: {{getFinalPrice()}}
-                  </div>
+                  <span class="price">
+                    Price: <span class="price-number">{{getFinalPrice()}}</span>
+                  </span>
                 </div>
 
 
@@ -164,28 +152,33 @@ z<!DOCTYPE html>
                   <div class="form-card">
                     <div class="row">
                       <div class="col-7">
-                        <h2 class="fs-title">Image Upload:</h2>
+                        <h2 class="fs-title"> Import des documents :</h2>
                       </div>
                       <div class="col-5">
                         <h2 class="steps">Step 3 - 4</h2>
                       </div>
                     </div>
 
-                    <div *ngIf="this.documents !== null" style="background-color: red !important;">
+                    <div *ngIf="this.documents !== null" >
                       <div>
                         <ol>
-                          <li *ngFor="let idoc of this.documents" (toggle)="adddoc(idoc)">{{ idoc.name }}</li>
+                          <li *ngFor="let idoc of this.documents" (toggle)="adddoc(idoc)">
+                            <div >
+
+                            <label class="fieldlabels">Upload {{idoc.name}}:</label>
+                         <input type="file" id="file" name="file" multiple />
+                         </div>
+                           </li>
                         </ol>
                       </div>
                       </div>
-                      <div class="item ">
-                        <label class="fieldlabels">Upload Your Photo:</label>
-                        <input type="file" id="file" name="file" multiple />
-                      </div>
+
+
                   </div>
 
                 </div>
-              <div>
+              <div class="button_div">
+
                 <button
                   type="button"
                   class="previous action-button-previous"
@@ -202,11 +195,13 @@ z<!DOCTYPE html>
                 >
                   {{ this.page === 2 ? "Submit" : "next" }}
                 </button>
+
               </div>
             </form>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </body>
 </html>

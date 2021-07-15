@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SignUpService } from '../services/sign-up.service';
+import { ChoixComponent } from '../components/choix/choix.component';
+import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 interface piece {
   value: string;
   viewValue: string;
@@ -12,6 +14,9 @@ interface piece {
 })
 export class SignUpComponent implements OnInit {
   services:any;
+  form1:FormGroup;
+  forms:FormGroup[];
+  var:boolean=false;
   selectedServices:SignUpService[]=[];
   page =0;
   piece: piece[] = [
@@ -26,7 +31,18 @@ export class SignUpComponent implements OnInit {
     email: ''
   };
   submitted = false;
-  constructor(private inscriptionService:SignUpService) {
+  constructor(private inscriptionService:SignUpService,  private _formBuilder: FormBuilder, choix:ChoixComponent )
+  { this.form1 = this._formBuilder.group({
+    name: ['', Validators.required],
+    lastname:['', Validators.required],
+    numtel:['',Validators.required],
+    adresseemail:['',Validators.required],
+    pjControl:['',Validators.required],
+   dateexp:['', Validators.required],
+   
+ });
+   this.var=choix.get();
+    this.forms = [this.form1];
    }
 
   ngOnInit(): void {
@@ -50,6 +66,7 @@ export class SignUpComponent implements OnInit {
           console.log(error);
         });
   }
+
   public next() {
     // console.log(this.form1);
     this.page < 3 && this.page++;
