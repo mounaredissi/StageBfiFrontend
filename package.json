@@ -28,6 +28,7 @@
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "fs": "0.0.1-security",
+    "ng2-file-upload": "^1.4.0",
     "progress": "^2.0.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",

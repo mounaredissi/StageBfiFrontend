@@ -3,6 +3,7 @@ import { SignUpService } from '../services/sign-up.service';
 import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { FileUploader } from 'ng2-file-upload';
 
 interface piece {
   value: string;
@@ -12,13 +13,14 @@ export enum TypeEnum {
   CANDIDAT="R",
   ENTREPRISE="C",
 }
-
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent implements OnInit {
+  uploader:FileUploader;
+
   myFiles:string [] = [];
   myFilesClient:string  [] = [];
   type: string;
@@ -78,6 +80,20 @@ formEntrepriseDocs=new FormGroup({
     private _formBuilder: FormBuilder,
     private route: ActivatedRoute,
   ) {
+    this.uploader = new FileUploader({
+      disableMultipart: true, // 'DisableMultipart' must be 'true' for formatDataFunction to be called.
+      formatDataFunctionIsAsync: true,
+      formatDataFunction: async (item: any) => {
+        return new Promise( (resolve, reject) => {
+          resolve({
+            name: item._file.name,
+            length: item._file.size,
+            contentType: item._file.type,
+            date: new Date()
+          });
+        });
+      }
+    });
     this.type = this.route.snapshot.params.type;
     this.var = true;
     this.forms = [this.formClient];
@@ -118,6 +134,7 @@ onFileChanges(event: any) {
 
   for (var i = 0; i < event.target.files.length; i++) {
       this.myFilesClient.push(event.target.files[i]);
+
   }
   console.log("mes fichiers ",this.myFilesClient);
 }
@@ -129,7 +146,6 @@ onFileChanges(event: any) {
     else{this.page < 3 && this.page++;}
 
   }
-
 public next2() {
   if(this.page == 0 && !this.formEntreprise.valid ||
     this.page == 1 && !this.formEntreprise2.valid || this.page == 2 && this.selectedServices.length==0 || this.page==3 && this.myFiles.length==0)
