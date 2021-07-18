@@ -11,10 +11,9 @@
           body-form
         "
       >
-        <div class="card px-0 pt-4 pb-0 mt-3 mb-3 body-form2">
+        <div class="card px-0 pt-4 pb-0 mt-3 mb-3 body-form2" id="msform">
           <h2 id="heading">veulliez vous inscrire</h2>
           <p>remplir le formulaire ci-dessous</p>
-          <form [formGroup]="formClient" id="msform">
             <ul id="progressbar2">
               <li
                 [ngClass]="{ active: this.page === 0 }"
@@ -45,9 +44,12 @@
               [ngClass]="{ tab: true, active: this.page === 0 }"
               [hidden]="this.page !== 0"
             >
+            <form [formGroup]="formClient" (ngSubmit) ="submit()">
+
               <div class="row">
                 <div class="col-7">
                   <h2 class="fs-title">Account Information:</h2>
+
                 </div>
                 <div class="col-5">
                   <h2 class="steps">Step 1 - 4</h2>
@@ -140,12 +142,15 @@
                   </mat-form-field>
                 </div>
               </div>
+              <span class="text-dager" *ngIf="submitted && !this.formClient.valid">form not valid</span>
+              </form>
             </div>
 
             <div
               [ngClass]="{ tab: true, active: this.page === 1 }"
               [hidden]="this.page !== 1"
             >
+            <form>
               <h3>Step Two</h3>
               <div
                 *ngIf="this.services !== null"
@@ -163,12 +168,14 @@
               <span class="price">
                 Price: <span class="price-number">{{ getFinalPrice() }}</span>
               </span>
+            </form>
             </div>
 
             <div
               [ngClass]="{ tab: true, active: this.page === 2 }"
               [hidden]="this.page !== 2"
             >
+            <form>
               <div class="form-card">
                 <div class="row">
                   <div class="col-7">
@@ -191,19 +198,23 @@
                           <label class="fieldlabels"
                             >Importer {{ idoc.name }}:</label
                           >
-                          <input type="file" id="upload" hidden />
+                          <input type="file" id="upload" hidden (change)="onFileChanges($event)" formControlName="files"/>
                           <label class="label-name" for="upload"
                             >Séléctionner le(s) fichier(s)</label
                           >
-                          <span id="file-chosen"
+                          <span *ngIf="this.myFilesClient.length==0" id="file-chosen"
                             >Aucun fichier séléctionné</span
                           >
+                          <span *ngIf="this.myFilesClient.length!==0" id="file-chosen"
+                          >{{this.myFilesClient.length}}</span
+                        >
                         </div>
                       </li>
                     </ol>
                   </div>
-                </div>
               </div>
+            </div>
+            </form>
             </div>
             <div class="button_div">
               <button
@@ -217,13 +228,11 @@
               <button
                 class="next action-button"
                 type="button"
-                (click)="this.next()"
-                [disabled]="this.page > 5"
-              >
+                (click)="this.next() "
+                              >
                 {{ this.page === 2 ? "Submit" : "next" }}
               </button>
             </div>
-          </form>
         </div>
       </div>
     </div>
@@ -231,7 +240,7 @@
 </ng-container>
 
 <ng-container *ngIf="type == typeEnum.ENTREPRISE">
-  <div class="container-fluid">
+  <div class="container-fluid" id="msform">
     <div class="row justify-content-center">
       <div
         class="
@@ -246,7 +255,6 @@
         <div class="card px-0 pt-4 pb-0 mt-3 mb-3 body-form2">
           <h2 id="heading">veulliez vous inscrire</h2>
           <p>remplir le formulaire ci-dessous</p>
-          <form [formGroup]="formEntreprise" id="msform">
             <ul id="progressbar">
               <li
                 [ngClass]="{ active: this.page === 0 }"
@@ -282,13 +290,16 @@
               [ngClass]="{ tab: true, active: this.page === 0 }"
               [hidden]="this.page !== 0"
             >
+            <form  [formGroup]="formEntreprise" >
               <div class="row">
                 <div class="col-7">
                   <h2 class="fs-title">Account Information:</h2>
+
                 </div>
                 <div class="col-5">
                   <h2 class="steps">Step 1 - 4</h2>
                 </div>
+
               </div>
               <div class="columns">
                 <div class="item">
@@ -412,12 +423,14 @@
                   </mat-form-field>
                 </div>
               </div>
+            </form>
             </div>
 
             <div
               [ngClass]="{ tab: true, active: this.page === 2 }"
               [hidden]="this.page !== 1"
             >
+            <form  [formGroup]="formEntreprise2">
               <div class="row">
                 <div class="col-7">
                   <h2 class="fs-title">Account Information:</h2>
@@ -494,6 +507,7 @@
                   </mat-form-field>
                 </div>
               </div>
+            </form>
             </div>
             <div
               [ngClass]="{ tab: true, active: this.page === 2 }"
@@ -523,6 +537,7 @@
               [ngClass]="{ tab: true, active: this.page === 3 }"
               [hidden]="this.page !== 3"
             >
+            <form [formGroup]="formEntrepriseDocs">
               <div class="form-card">
                 <div class="row">
                   <div class="col-7">
@@ -545,7 +560,11 @@
                           <label class="fieldlabels"
                             >Importer {{ idoc.name }}:</label
                           >
-                          <input type="file" id="upload" hidden />
+                          <input type="file" id="upload" hidden    (change)="onFileChange($event)"   formControlName="file"
+                          />
+                          <div *ngIf="f.file.touched && f.file.invalid && f.file.errors!==null" class="alert alert-danger">
+                            <div *ngIf="f.file.errors.required">File is required.</div>
+                        </div>
                           <label class="label-name" for="upload"
                             >Séléctionner le(s) fichier(s)</label
                           >
@@ -558,6 +577,7 @@
                   </div>
                 </div>
               </div>
+            </form>
             </div>
             <div class="button_div">
               <button
@@ -571,13 +591,27 @@
               <button
                 class="next action-button"
                 type="button"
-                (click)="this.next()"
-                [disabled]="this.page > 5"
+                (click)=" this.submit(); this.next2() "
               >
                 {{ this.page === 4 ? "Submit" : "next" }}
               </button>
+               <span class="text-danger" *ngIf=" submitted && !this.formEntreprise.valid"> formulaire n'est pas rempli </span>
+               <span class="text-danger" *ngIf=" submitted2 && !this.formEntreprise2.valid"> formulaire n'est pas rempli waaaaaaaaaa </span>
+               <span class="text-danger" *ngIf=" submitted3 && this.selectedServices.length==0">Il faut séléctionner au moins un service! </span>
+               <span class="text-danger" *ngIf=" submitted4 &&  this.myFiles.length==0"> Il faut importer au moins un fichier!</span>
+
+
+               <div class="alert fade alert-simple alert-danger alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show" role="alert" data-brk-library="component__alert">
+                <button type="button" class="close font__size-18" data-dismiss="alert">
+                        <span aria-hidden="true" id="danger">
+                          <i class="fa fa-times danger " ></i>
+                        </span>
+                        <span class="sr-only">Close</span>
+                      </button>
+                <i class="start-icon far fa-times-circle faa-pulse animated"></i>
+                <strong class="font__weight-semibold">Oh oh!</strong> rempli le formulaire afin de pase
+              </div>
             </div>
-          </form>
         </div>
       </div>
     </div>
