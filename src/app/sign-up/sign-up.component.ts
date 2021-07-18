@@ -19,7 +19,6 @@ export enum TypeEnum {
   styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent implements OnInit {
-  uploader:FileUploader;
 
   myFiles:string [] = [];
   myFilesClient:string  [] = [];
@@ -72,6 +71,9 @@ formEntrepriseDocs=new FormGroup({
   submitted3 = false;
   submitted4 = false;
 
+  submitted7 = false;
+  submitted6 = false;
+  submitted5 = false;
 
 
 
@@ -80,20 +82,7 @@ formEntrepriseDocs=new FormGroup({
     private _formBuilder: FormBuilder,
     private route: ActivatedRoute,
   ) {
-    this.uploader = new FileUploader({
-      disableMultipart: true, // 'DisableMultipart' must be 'true' for formatDataFunction to be called.
-      formatDataFunctionIsAsync: true,
-      formatDataFunction: async (item: any) => {
-        return new Promise( (resolve, reject) => {
-          resolve({
-            name: item._file.name,
-            length: item._file.size,
-            contentType: item._file.type,
-            date: new Date()
-          });
-        });
-      }
-    });
+
     this.type = this.route.snapshot.params.type;
     this.var = true;
     this.forms = [this.formClient];
@@ -190,7 +179,16 @@ public next2() {
     if(this.page==3)
     {this.submitted4=true;    console.log("pagehedhi3", this.submitted3)};
   }
+submit2 (){
+  this.submitted7=true;
+  console.log("page0", this.submitted);
+  console.log("page1", this.submitted2);
+  if(this.page==1)
+  {this.submitted5=true;    console.log("pagehedhi", this.submitted2)};
+  if(this.page==2)
+  {this.submitted6=true;    console.log("pagehedhi3", this.submitted3)};
 
+}
 
   //  debugger;
   //  const { name, lastname, numtel, adresseemail, pjControl } = this.form1.value;

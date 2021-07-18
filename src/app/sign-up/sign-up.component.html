@@ -228,10 +228,24 @@
               <button
                 class="next action-button"
                 type="button"
-                (click)="this.next() "
+                (click)="submit2();this.next() "
                               >
                 {{ this.page === 2 ? "Submit" : "next" }}
               </button>
+              <span class="text-danger" *ngIf=" submitted7 && !this.formClient.valid"> formulaire n'est pas rempli </span>
+              <span class="text-danger" *ngIf=" submitted5 && this.selectedServices.length==0">Il faut séléctionner au moins un service! </span>
+              <span class="text-danger" *ngIf=" submitted &&  this.myFilesClient.length==0"> Il faut importer au moins un fichier!</span>
+              <div *ngIf="( submitted7 && !this.formClient.valid )|| (submitted5 && this.selectedServices.length==0) ||(submitted6 &&  this.myFilesClient.length==0)  "  class="alert fade alert-simple alert-danger alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show" role="alert" data-brk-library="component__alert">
+               <button type="button" class="close font__size-18" data-dismiss="alert">
+                       <span aria-hidden="true" id="danger">
+                         <i class="fa fa-times danger " ></i>
+                       </span>
+                       <span class="sr-only">Close</span>
+                     </button>
+               <i class="start-icon far fa-times-circle faa-pulse animated"></i>
+               <strong class="font__weight-semibold">Oh oh!</strong> rempli le formulaire afin de passer a l'etape suivante
+             </div>
+
             </div>
         </div>
       </div>
