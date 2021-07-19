@@ -436,17 +436,6 @@ input.ng-touched.ng-invalid {
   border-width: 1px;
   border-left: red solid 5px;
 }
-body
-{
-  background: #000e29;
-}
-
-.alert>.start-icon {
-    margin-right: 0;
-    min-width: 20px;
-    text-align: center;
-}
-
 
 .alert-simple.alert-danger
 {
@@ -454,7 +443,6 @@ body
     background-color: rgba(220, 17, 1, 0.16);
     box-shadow: 0px 0px 2px #ff0303;
     color: #ff0303;
-    text-shadow: 2px 1px #00040a;
   transition:0.5s;
   cursor:pointer;
 }
@@ -526,6 +514,7 @@ animation: blink-1 2s infinite both;
   }
 }
  #danger:before {
+   position: absolute;
   font-family: FontAwesome;
   content: "\f071"
 }

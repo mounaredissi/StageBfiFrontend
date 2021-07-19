@@ -4,7 +4,7 @@ import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { FileUploader } from 'ng2-file-upload';
-
+import { ChoixService } from 'src/app/components/choix/choix service/choix.service';
 interface piece {
   value: string;
   viewValue: string;
@@ -81,10 +81,12 @@ formEntrepriseDocs=new FormGroup({
     private inscriptionService: SignUpService,
     private _formBuilder: FormBuilder,
     private route: ActivatedRoute,
+    private service:ChoixService,
   ) {
 
-    this.type = this.route.snapshot.params.type;
-    this.var = true;
+    this.type = this.service.getChoix();
+    console.log("le type",this.type);
+        this.var = true;
     this.forms = [this.formClient];
   }
 
@@ -132,14 +134,16 @@ onFileChanges(event: any) {
     if (this.page == 0 && !this.formClient.valid || this.page == 1 && this.selectedServices.length==0|| this.page == 2 && this.myFilesClient.length==0)
     {return;}
 
-    else{this.page < 3 && this.page++;}
+    else{this.page < 2 && this.page++;}
+   if ( this.page==2){this.postrequestClient();}
 
   }
 public next2() {
   if(this.page == 0 && !this.formEntreprise.valid ||
     this.page == 1 && !this.formEntreprise2.valid || this.page == 2 && this.selectedServices.length==0 || this.page==3 && this.myFiles.length==0)
     {return; }
-    else {this.page<4 && this.page++;}
+    else {this.page<3 && this.page++;}
+    if (this.page==3){this.postrequestEntrerise()}
 }
   public adddoc(doc: any) {
     console.log(doc);
@@ -188,17 +192,46 @@ submit2 (){
   if(this.page==2)
   {this.submitted6=true;    console.log("pagehedhi3", this.submitted3)};
 
-}
+ }
+ postrequestClient(){
 
+  const { name, lastname, numtel, adresseemail, pjControl } = this.formClient.value;
+
+ const formObj = {
+   name,
+   lastname,
+   numtel,
+   adresseemail,
+   pjControl,
+   selectedServices:this.selectedServices,
+   myFilesClient:this.myFilesClient,
+ };
+
+ console.log(formObj);
+ this.inscriptionService.create(formObj).subscribe(res => {
+   console.log('subscription sent successfully!');
+   console.log(res);
+ })
+
+ }
+ postrequestEntrerise(){
   //  debugger;
-  //  const { name, lastname, numtel, adresseemail, pjControl } = this.form1.value;
+    const { name, lastname, numtel, adresseemail, pjControl } = this.formEntreprise.value;
+    const{nameprof, lastnameprof, numtelprof,adressemailprof,adresseprof}=this.formEntreprise2.value;
 
-    /*const formObj = {
+    const formObj = {
       name,
       lastname,
       numtel,
       adresseemail,
-      pjControl
+      pjControl,
+      nameprof,
+      lastnameprof,
+      numtelprof,
+      adressemailprof,
+      adresseprof,
+      selectedServices:this.selectedServices,
+      myFiles:this.myFiles,
     };
 
     console.log(formObj);
@@ -207,5 +240,6 @@ submit2 (){
       console.log(res);
     })
   }
-*/
+
+
 }

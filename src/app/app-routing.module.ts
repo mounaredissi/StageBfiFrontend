@@ -8,7 +8,7 @@ const routes: Routes=[
   {path: 'choix', component: ChoixComponent},
   {path:'',component: AcceuilComponent},
   {path:'entreprise',component:EntrepriseComponent},
-  {path:'sign-up/:type',component:SignUpComponent},
+  {path:'sign-up',component:SignUpComponent},
 
 ]
 
