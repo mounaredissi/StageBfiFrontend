@@ -19,7 +19,13 @@ export enum TypeEnum {
   styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent implements OnInit {
-
+  submitted = false;
+  submitted2 = false;
+  submitted3 = false;
+  submitted4 = false;
+  submitted7 = false;
+  submitted6 = false;
+  submitted5 = false;
   myFiles:string [] = [];
   myFilesClient:string  [] = [];
   type: string;
@@ -44,21 +50,21 @@ export class SignUpComponent implements OnInit {
     dateexp: new FormControl('', Validators.required),
   })
   formEntreprise=new FormGroup({
-   name:  new FormControl('', Validators.required),
-  lastname: new FormControl('', Validators.required),
-  numtel: new FormControl('', Validators.required),
-  adresseemail: new FormControl('', Validators.required),
+    adminFirstName:  new FormControl('', Validators.required),
+    adminLastName: new FormControl('', Validators.required),
+    adminPhone: new FormControl('', Validators.required),
+  adminEmail: new FormControl('', Validators.required),
   pjControl: new FormControl('', Validators.required),
  dateexp: new FormControl('', Validators.required),
  numpiece: new FormControl('', Validators.required),
- adresse: new FormControl('', Validators.required),
+ adminAddress: new FormControl('', Validators.required),
 })
 formEntreprise2=new FormGroup({
-  nameprof : new FormControl('', Validators.required),
-  lastnameprof: new FormControl('', Validators.required),
-  numtelprof: new FormControl('', Validators.required),
-  adresseprof: new FormControl('', Validators.required),
-  adressemailprof: new FormControl('', Validators.required),
+  profileFirstName : new FormControl('', Validators.required),
+  profileLastName: new FormControl('', Validators.required),
+  profilePhone: new FormControl('', Validators.required),
+  profileAddress: new FormControl('', Validators.required),
+  profileEmail: new FormControl('', Validators.required),
 })
 formClientDocs=new FormGroup({
   files: new FormControl('', [Validators.required])
@@ -66,14 +72,7 @@ formClientDocs=new FormGroup({
 formEntrepriseDocs=new FormGroup({
   file: new FormControl('', [Validators.required])
 })
-  submitted = false;
-  submitted2 = false;
-  submitted3 = false;
-  submitted4 = false;
 
-  submitted7 = false;
-  submitted6 = false;
-  submitted5 = false;
 
 
 
@@ -216,22 +215,23 @@ submit2 (){
  }
  postrequestEntrerise(){
   //  debugger;
-    const { name, lastname, numtel, adresseemail, pjControl } = this.formEntreprise.value;
-    const{nameprof, lastnameprof, numtelprof,adressemailprof,adresseprof}=this.formEntreprise2.value;
+    const { adminFirstName, adminLastName, adminEmail, adminPhone, pjControl,  } = this.formEntreprise.value;
+    const{profileFirstName, profileLastName, profileAddress,profileEmail}=this.formEntreprise2.value;
 
     const formObj = {
-      name,
-      lastname,
-      numtel,
-      adresseemail,
+      adminFirstName,
+      adminLastName,
+      adminPhone,
+      adminEmail,
       pjControl,
-      nameprof,
-      lastnameprof,
-      numtelprof,
-      adressemailprof,
-      adresseprof,
-      selectedServices:this.selectedServices,
-      myFiles:this.myFiles,
+      profileFirstName,
+      profileLastName,
+      profileAddress,
+      profileEmail,
+      services:this.selectedServices,
+      documentsData:this.myFiles,
+      clientNature:this.type,
+
     };
 
     console.log(formObj);
