@@ -514,7 +514,33 @@ animation: blink-1 2s infinite both;
   }
 }
  #danger:before {
-   position: absolute;
+   position: relative;
   font-family: FontAwesome;
-  content: "\f071"
+  content: "\f071";
+  right: 585px;
+    font-size: 25px;
+    top: -10px;
+
+}
+
+.font__weight-semibold
+{
+  margin-left: 30px;
+}
+
+.alert-box {
+  height: 30px;
+  width: 650px;
+}
+
+.close-button
+{
+  position: relative;
+  right: 20px;
+}
+
+.fa-remove:before, .fa-close:before, .fa-times:before {
+  position: relative;
+  right: -15px !important;
+    top: -15px !important;
 }
