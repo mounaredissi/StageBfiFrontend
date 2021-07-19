@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
-import { EntrepriseComponent } from './components/entreprise/entreprise.component';
 import { ChoixComponent } from './components/choix/choix.component';
 import { AcceuilComponent } from './components/acceuil/acceuil.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,11 +19,10 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignUpComponent } from 'src/app/components/sign-up/sign-up.component';
 @NgModule({
   declarations: [
     AppComponent,
-    EntrepriseComponent,
     ChoixComponent,
     AcceuilComponent,
     SignUpComponent,

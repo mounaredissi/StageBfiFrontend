@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TypeEnum } from 'src/app/sign-up/sign-up.component';
+import { TypeEnum } from 'src/app/components/sign-up/sign-up.component';
 import { ChoixService } from './choix service/choix.service';
 @Component({
   selector: 'app-choix',
@@ -10,11 +10,11 @@ export class ChoixComponent implements OnInit {
   choice: boolean = false;
   routeType = TypeEnum;
 
-  constructor(private service:ChoixService) {}
+  constructor(private service: ChoixService) {}
 
   ngOnInit(): void {}
   public click() {
-    this.service.setChoix("R") ;
+    this.service.setChoix('R');
   }
   public get() {
     return this.service.getChoix();
